@@ -6,5 +6,5 @@
 # then navigate to:
 #  http://localhost:8080/java-webapp-container/
 
-FROM jetty:9.4.36-jdk8
+FROM jetty:9.4.11
 COPY target/java-webapp-container.war /var/lib/jetty/webapps/
