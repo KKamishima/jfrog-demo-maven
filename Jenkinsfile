@@ -31,7 +31,7 @@ pipeline {
         stage('MavenBuild') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url: 'https://github.com/KKamishima/java-webapp-container.git'
+                // git branch: 'main', url: 'https://github.com/KKamishima/java-webapp-container.git'
 
                 // Run Maven on a Unix agent.
                 // sh "mvn -Dmaven.test.failure.ignore=true clean war:war"
