@@ -46,7 +46,8 @@ pipeline {
                     // Maven options.
                     opts: '-Xms1024m -Xmx4096m',
                     resolverId: 'maven-resolver',
-                    deployerId: 'maven-deployer'
+                    deployerId: 'maven-deployer',
+                    buildName: 'maven-build'
                 )
                 rtBuildInfo (
                    captureEnv: true
