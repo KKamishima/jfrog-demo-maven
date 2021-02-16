@@ -96,5 +96,20 @@ pipeline {
                 // )
             }
         }
+
+        stage ('Xray scan') {
+            steps {
+                xrayScan (
+                    serverId: 'demo5-art',
+                    buildName: 'maven-build',
+                    failBuild: true
+                )
+                xrayScan (
+                    serverId: 'demo5-art',
+                    buildName: 'docker-build',
+                    failBuild: true
+                )
+            }
+        }
     }
 }
