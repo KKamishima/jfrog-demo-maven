@@ -35,6 +35,10 @@ pipeline {
                 // Get some code from a GitHub repository
                 // git branch: 'main', url: 'https://github.com/KKamishima/java-webapp-container.git'
 
+                rtBuildInfo (
+                   captureEnv: true,
+                    buildName: 'maven-build'
+                )
                 // Run Maven on a Unix agent.
                 // sh "mvn -Dmaven.test.failure.ignore=true clean war:war"
                 rtMavenRun (
@@ -48,9 +52,6 @@ pipeline {
                     resolverId: 'maven-resolver',
                     deployerId: 'maven-deployer',
                     buildName: 'maven-build'
-                )
-                rtBuildInfo (
-                   captureEnv: true
                 )
                 rtPublishBuildInfo(
                     serverId: 'demo5-art',
