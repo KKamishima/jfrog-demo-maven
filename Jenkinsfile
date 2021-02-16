@@ -24,6 +24,8 @@ pipeline {
                     threads: 3,
                     // Attach custom properties to the published artifacts:
                     // properties: ['key1=value1', 'key2=value2']
+                    deployArtifacts: true,
+                    includeEnvVars: true,
                 )
             }
         }
