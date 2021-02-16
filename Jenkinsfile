@@ -46,10 +46,12 @@ pipeline {
                     resolverId: 'maven-resolver',
                     deployerId: 'maven-deployer'
                 )
+                rtBuildInfo (
+                   captureEnv: true
+                )
                 rtPublishBuildInfo(
                     serverId: 'demo5-art',
-                    buildName: 'maven-build',
-                    captureEnv: true
+                    buildName: 'maven-build'
                 )
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
