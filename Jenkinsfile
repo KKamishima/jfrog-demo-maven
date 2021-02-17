@@ -46,7 +46,7 @@ pipeline {
                     tool: "maven-3.6.3",
                     pom: 'pom.xml',
                     //goals: 'clean war:war',
-                    goals: 'clean install',
+                    goals: 'clean install -U',
                     // Maven options.
                     opts: '-Xms1024m -Xmx4096m',
                     resolverId: 'maven-resolver',
