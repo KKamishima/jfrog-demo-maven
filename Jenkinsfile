@@ -79,10 +79,12 @@ pipeline {
                     def server = Artifactory.server 'demo5-art'
                     def rtDocker = Artifactory.docker server: server
 
-                    def customImage = docker.build tag
-                    def buildInfo = rtDocker.push tag, repo
+                    def buildInfo = Artifactory.newBuildInfo()
                     buildInfo.name = 'docker-build'
                     buildInfo.env.capture = true
+
+                    docker.build tag
+                    rtDocker.push tag, repo, buildInfo
                     server.publishBuildInfo buildInfo
                 }
                 // rtDockerPush(
