@@ -106,12 +106,12 @@ pipeline {
                 xrayScan (
                     serverId: 'demo5-art',
                     buildName: 'maven-build',
-                    failBuild: true
+                    // failBuild: true
                 )
                 xrayScan (
                     serverId: 'demo5-art',
                     buildName: 'docker-build',
-                    failBuild: true
+                    // failBuild: true
                 )
             }
         }
